@@ -1,0 +1,80 @@
+.tableContainer {
+    display: block;
+    max-height: calc(100% - 100px);
+    margin-top: 20px;
+
+    .tableContainerWrapper {
+        overflow-y: auto;
+        height: calc(100% - 2px);
+        max-width: 900px;
+        border-bottom: 1px dashed #000;
+        border-top: 1px dashed #000;
+
+        .passengersRow {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            padding: 8px;
+            border-right: 1px dashed #000;
+            border-left: 1px dashed #000;
+            border-top: 1px dashed #000;
+
+            
+            &:nth-child(1) {
+                border-top: none;
+            }
+
+            div {
+                display: flex;
+                align-items: center;
+            }
+
+            span {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .row1 {
+                .name {
+                    width: 550px;
+                }
+
+                .gender {
+                    width: 60px;
+                }
+
+                .survived {
+                    width: 250px;
+                    color: #006943;
+                }
+
+                .notSurvived {
+                    width: 250px;
+                    color: #CA1612;
+                }
+
+                .age {
+                    display: flex;
+                    justify-content: flex-end;
+                    width: 50px;
+                }
+            }
+
+            .row2 {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                margin-top: 5px;
+
+                .ticket {
+                    text-align: left;
+                }
+
+                .cabin {
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
