@@ -58,23 +58,27 @@ export function PassengersTable({
                 {passengers.slice(0, visibleCount).map((p) => (
                     <div key={p.id} className={styles.passengersRow}>
                         <div className={styles.row1}>
-                            <span className={styles.name}>
-                                {highlightText(p.name, queryParts)}
-                            </span>
+                            <div className={styles.firstRow}>
+                                <span className={styles.name}>
+                                    {highlightText(p.name, queryParts)}
+                                </span>
 
-                            <span className={styles.gender}>
-                                {highlightText(p.gender === 'male' ? 'M' : 'F', queryParts)}
-                            </span>
+                                <span className={styles.gender}>
+                                    {highlightText(p.gender === 'male' ? 'M' : 'F', queryParts)}
+                                </span>
+                            </div>
 
-                            <span className={p.survived ? styles.survived : styles.notSurvived}>
-                                {p.survived ? 'SURVIVED' : 'NOT SURVIVED'}
-                            </span>
+                            <div className={styles.secondRow}>
+                                <span className={p.survived ? styles.survived : styles.notSurvived}>
+                                    {p.survived ? 'SURVIVED' : 'NOT SURVIVED'}
+                                </span>
 
-                            <span className={styles.age}>
-                                {highlightText(`${p.age?.toFixed(0) ?? '?'}`, queryParts)}
-                                {' '}
-                                y
-                            </span>
+                                <span className={styles.age}>
+                                    {highlightText(`${p.age?.toFixed(0) ?? '?'}`, queryParts)}
+                                    {' '}
+                                    y
+                                </span>
+                            </div>
                         </div>
 
                         <div className={styles.row2}>

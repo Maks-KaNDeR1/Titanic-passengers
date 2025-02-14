@@ -7,8 +7,14 @@
         overflow-y: auto;
         height: calc(100% - 2px);
         max-width: 900px;
+        width: 100%;
         border-bottom: 1px dashed #000;
         border-top: 1px dashed #000;
+
+
+        @media (max-width: 820px) {
+            max-width: 720px;
+        }
 
         .passengersRow {
             display: flex;
@@ -19,7 +25,7 @@
             border-left: 1px dashed #000;
             border-top: 1px dashed #000;
 
-            
+
             &:nth-child(1) {
                 border-top: none;
             }
@@ -37,7 +43,7 @@
 
             .row1 {
                 .name {
-                    width: 550px;
+                    width: 520px;
                 }
 
                 .gender {
@@ -73,6 +79,55 @@
 
                 .cabin {
                     text-align: right;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .tableContainer {
+        width: calc(100% - 40px);
+        padding: 0px 20px;
+
+        .tableContainerWrapper {
+            .passengersRow {
+                padding: 6px;
+
+                .row1 {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+
+                    .firstRow {
+                        display: flex;
+                        justify-content: space-between;
+                        width: 100%;
+
+                        .name {
+                            flex: 3;
+                        }
+
+                        .gender {
+                            flex: 1;
+                            text-align: end;
+                        }
+                    }
+
+                    .secondRow {
+                        display: flex;
+                        justify-content: space-between;
+                        width: 100%;
+
+                        .survived {
+                            flex: 1;
+                        }
+
+                        .age {
+                            flex: 1;
+                            text-align: end;
+                        }
+                    }
                 }
             }
         }
